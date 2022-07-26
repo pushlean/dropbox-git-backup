@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "dropbox-git-backup"
+version = "0.1.0"
+description = "Back up a Dropbox folder to a git repo"
+authors = ["Paul Shen <paul@pushlean.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sh = "^1.14.3"
+maestral = "^1.6.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+pre-commit = "^2.20.0"
+black = "^22.6.0"
+flake8 = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+py_version = 310
