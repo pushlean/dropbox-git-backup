@@ -35,7 +35,7 @@ class GitClient:
         git.add(".")
         commit_message = self._create_commit_message()
         git.commit("--message", commit_message)
-        git.push("-u", "origin", "main")
+        git.push()
 
     def _create_commit_message(self) -> str:
         now = datetime.utcnow().isoformat()
