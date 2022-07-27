@@ -15,8 +15,10 @@ class GitClient:
         env = {}
         self._git = git.bake(_env=env)
 
-    def clone(self):
+    def clone(self) -> None:
         os.chdir(self._data_root_dir)
+        if os.path.isdir(self._work_dir):
+            return
         git_dir = os.path.join(self._data_root_dir, "git")
         git.clone("--separate-git-dir", git_dir, self._remote, self._work_dir)
         os.chdir(self._work_dir)
